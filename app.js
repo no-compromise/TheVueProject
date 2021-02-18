@@ -1,33 +1,32 @@
-// console.log('Hellou there')
-
 const app = Vue.createApp({
     data() {
-        return {
-            url :   'http://',
-            toggle  : true,
-            x   :   0,
-            y   :   0,
-            books   : [
-                {title: "Titul 1", author: "John Cena", isFav: true},
-                {title: "Titul 2", author: "Fredy Kruger", isFav: false},
-                {title: "Titul 3", author: "Tim Limo", isFav: true}
-            ]
-
-        }
+      return {
+        showBooks: true,
+        books: [
+          { title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg', isFav: true },
+          { title: 'the way of kings', author: 'brandon sanderson', img: 'assets/2.jpg', isFav: false },
+          { title: 'the final empire', author: 'brandon sanderson', img: 'assets/3.jpg', isFav: true },
+        ],
+      }
     },
     methods: {
+      toggleShowBooks() {
+        this.showBooks =  !this.showBooks
+      },
+      toggleFav(book) {
+        book.isFav = !book.isFav;
         
-        toggleButton() {
-            this.toggle = !this.toggle
-        },
-        toggleFav(book){
-            book.isFav = !book.isFav
-
-        }
-        
+        // if (book.isFav) {
+        //   book.isFav = false;
+        // } else {
+        //   book.isFav = true;
+        // }
+      }
     }
-})
-
-
-
-app.mount('#app')
+  })
+  
+  app.mount('#app')
+  
+  // Challenge - Add to Favs
+  //   - attach a click event to each li tag (for each book)
+  //   - when a user clicks an li, toggle the 'isFav' property of that book

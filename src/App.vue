@@ -1,17 +1,20 @@
 <template>
   <h3>{{ title }}</h3>
-  <input type="text" ref= "name" name="" id="">
-  <button @click="handleClick">Click me</button>
+  <Modal header= 'Sign up for Giweaway' />
 </template>
 
 <script>
-
+import Modal from './components/Modal.vue'
 export default {
   name: 'App',
+  components: { 
+    Modal 
+  },
   data(){
     return {
       title :"Hellou Vue"
     }
+ 
   }
 }
 </script>
